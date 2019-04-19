@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>XY Studio</title>
+<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <ul class="nav nav-pills">
+              <li role="presentation" class="active"><a href="/blog/index">Home</a></li>
+              <li role="presentation"><a href="#">Coffee</a></li>
+              <li role="presentation"><a href="#">Notification</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="jumbotron">
+      <h1 style="text-align: center">Coffe Buzz</h1>
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+            <div>
+                {% for order in all_order_item %}
+                    <div class="col-md-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3>{{ order.product_name }}</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div>
+                                <h3>Number : {{ order.order_number }}</h3>
+                                <h3>Status : {{ order.order_status }}</h3>
+                                <h3>Order Time: {{ order.created_at }}</h3>
+                            </div>
+                            <div class="pull-right">
+                                <button class="btn btn-primary btn-lg">Complete</button>
+                                <button class="btn btn-primary btn-lg">Remove</button>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

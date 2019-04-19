@@ -1,0 +1,38 @@
+
+make it running in terminal:
+command : python manage.py runserver
+
+create an app
+python manage.py startapp blog
+
+migrate the content of models.py to db.sqlite3
+python manage.py makemigrations
+python manage.py migrate
+
+
+use django shell to debug
+python manage.py shell
+
+>>> from blog.models import Article
+>>> a = Article()
+>>> a.title = "Test Django shell"
+>>> a.brief_content = "xy studio"
+>>> a.content = "nothing here, just testing"
+>>> print(a)
+Article object (None)
+>>> a.save()
+>>> articles = Article.objects.all()
+>>> aa = articles[0]
+>>> print(aa.title)
+Test Django shell
+>>> print(aa.content)
+nothing here, just testing
+
+
+creat a super user
+python manage.py createsuperuser
+
+
+
+
+
