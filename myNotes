@@ -33,6 +33,12 @@ creat a super user
 python manage.py createsuperuser
 
 
+how to send info via encode way, first, install this app
+pip install itsdangerous
+TimedJSONWebSignatureSerializer
+it can limit time out/ expire
+
+
 
 
 

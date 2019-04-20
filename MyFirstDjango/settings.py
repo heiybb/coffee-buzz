@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # my app
-    'blog.apps.BlogConfig'
+    'coffee.apps.CoffeeConfig'
 ]
 
 MIDDLEWARE = [
@@ -122,3 +122,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+EMAIL_HOST = 'smtp.qq.com'
+EMAIL_PORT = 25
+EMAIL_HOST_USER = '691804490@qq.com'
+EMAIL_HOST_PASSWORD = 'kfrqnksiaqaybcbe'
+EMAIL_USE_TLS = True
+EMAIL_FROM = 'SkyHigh<691804490@qq.com>'
