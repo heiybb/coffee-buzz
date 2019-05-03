@@ -1,4 +1,5 @@
-
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from django.shortcuts import render, render_to_response, redirect
 from django.http import HttpResponse
@@ -14,9 +15,9 @@ from django.contrib.auth.hashers import make_password, check_password
 from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
 from itsdangerous import SignatureExpired
 from django.conf import settings
-from django.core.mail import send_mail
 from django.contrib.auth import authenticate
-
+from django.core.mail import send_mail
+from django.contrib import auth
 
 
 # Create your views here.
@@ -161,6 +162,7 @@ def register(request):
         if Staff.objects.filter(staff_email=email).exists():
             return render(request, 'register.html', {'errmsg': 'email is exist'})
 
+        # method 1 to register
         staff = Staff()
         staff.staff_username = username
         staff.staff_password = make_password(password)
@@ -168,28 +170,32 @@ def register(request):
         staff.is_active = False
         staff.save()
 
+
+
         # active account via email, it should contain user token
         # should contain user info, and should encode info
         # generate active token
-        serializer = Serializer(settings.SECRET_KEY, 3600)
-        info = {'confirm': staff.staff_id}
-        token = serializer.dumps(info)
-        token = token.decode('utf8')
+        # serializer = Serializer(settings.SECRET_KEY, 3600)
+        # info = {'confirm': staff.staff_id}
+        # token = serializer.dumps(info)
+        # token = token.decode('utf8')
 
         # send the email,
-        # subject = "welcome"
-        # message = ""
-        # html_message = "<a href='http://127.0.0.1:8000/blog/active/%s'>
-        # http://127.0.0.1:8000/blog/active/%s</a>"%(token, token)
-        # sender = settings.EMAIL_FROM
-        # receiver = [email]
-        # send_mail(subject, message, sender, receiver,html_message=html_message)
+        # subject = 'welcome'
+        # message = ''
+        # # html_message = "<a href='http://127.0.0.1:8000/blog/active/%s'>
+        # # http://127.0.0.1:8000/blog/active/%s</a>"%(token, token)
+        # html_message = ''
+        # sender = '691804490@qq.com'
+        # receiver = ['calste@163.com']
+        # send_mail(subject, message, sender, receiver, html_message=html_message)
 
         # return redirect('/coffee/index')
         return redirect('/coffee/login')
 
 
 def active(request, token):
+
     serializer = Serializer(settings.SECRET_KEY, 3600)
     try:
         info = serializer.loads(token)
@@ -229,6 +235,7 @@ def login(request):
 
 def get_staff(request):
     return render(request, 'staff.html')
+
 
 
 

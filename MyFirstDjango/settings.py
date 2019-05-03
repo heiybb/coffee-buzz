@@ -52,6 +52,9 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+
+
+
 ROOT_URLCONF = 'MyFirstDjango.urls'
 
 TEMPLATES = [
@@ -129,4 +132,4 @@ EMAIL_PORT = 25
 EMAIL_HOST_USER = '691804490@qq.com'
 EMAIL_HOST_PASSWORD = 'kfrqnksiaqaybcbe'
 EMAIL_USE_TLS = True
-EMAIL_FROM = 'SkyHigh<691804490@qq.com>'
+EMAIL_FROM = '691804490@qq.com'
