@@ -4,6 +4,9 @@ command : python manage.py runserver
 
 create an app
 python manage.py startapp blog
+    in this app, create urls.py, templates
+    go to parent url to register this new app
+    go to parent settings to register this new app
 
 migrate the content of models.py to db.sqlite3
 python manage.py makemigrations

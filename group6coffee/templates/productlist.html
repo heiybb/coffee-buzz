@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+    </script>
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <ul class="nav nav-pills">
+              <li role="presentation" class="active"><a href="/group6coffee/index">Home</a></li>
+              <li role="presentation"><a href="/group6coffee/productlist">{{ user_name }}</a></li>
+              <li role="presentation"><a href="/group6coffee/logout">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel panel-default" style="margin-top: 50px">
+              <div class="panel-heading">
+                <h3 class="panel-title">Coffee Menu</h3>
+              </div>
+              <div class="panel-body">
+                <table class="table">
+                    {% for item in allproducts %}
+                        {% if item.product_type == 'Coffee' %}
+                        <tr>
+                            <td>
+                                <p>{{ item.product_name }}</p>
+                            </td>
+                            <td>
+                                <p>{{ item.product_size }}</p>
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                                    {% if item.product_state %}
+                                        <p>Available</p>
+                                    {% else %}
+                                        <p>Out of Stock</p>
+                                    {% endif %}
+                            </td>
+                            <td>
+                                <div>
+                                    <input class="hidden id" value="{{ item.product_id }}">
+                                    <input class="hidden type" value="{{ item.product_type }}">
+                                    <input class="hidden state" value="{{ item.product_state }}">
+                                    <input class="hidden quantity" value="{{ item.product_quantity }}">
+                                    <span class="quantity">0</span>
+                                    <button class="btn btn-default add">+</button>
+                                    <button class="btn btn-default sub">-</button>
+                                </div>
+
+                            </td>
+
+                        </tr>
+                        {% endif %}
+                    {% endfor %}
+
+                </table>
+              </div>
+            </div>
+            </div>
+
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel panel-default" style="margin-top: 50px">
+              <div class="panel-heading">
+                <h3 class="panel-title">Tea Menu</h3>
+              </div>
+              <div class="panel-body">
+                <table class="table">
+                    {% for item in allproducts %}
+                        {% if item.product_type == 'Tea' %}
+                        <tr>
+                            <td>
+                                <p>{{ item.product_name }}</p>
+                            </td>
+                            <td>
+                                <p>{{ item.product_size }}</p>
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                                    {% if item.product_state %}
+                                        <p>Available</p>
+                                    {% else %}
+                                        <p>Out of Stock</p>
+                                    {% endif %}
+                            </td>
+
+                            <td>
+                                <div>
+                                    <input class="hidden id" value="{{ item.product_id }}">
+                                    <input class="hidden type" value="{{ item.product_type }}">
+                                    <input class="hidden state" value="{{ item.product_state }}">
+                                    <input class="hidden quantity" value="{{ item.product_quantity }}">
+                                    <span class="quantity">0</span>
+                                    <button class="btn btn-default add">+</button>
+                                    <button class="btn btn-default sub">-</button>
+                                </div>
+
+                            </td>
+
+                        </tr>
+                        {% endif %}
+                    {% endfor %}
+
+                </table>
+              </div>
+            </div>
+            </div>
+
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel panel-default" style="margin-top: 50px">
+              <div class="panel-heading">
+                <h3 class="panel-title">Cake Menu</h3>
+              </div>
+              <div class="panel-body">
+                <table class="table">
+                    {% for item in allproducts %}
+                        {% if item.product_type == 'Cake' %}
+                        <tr>
+                            <td>
+                                <p>{{ item.product_name }}</p>
+                            </td>
+                            <td>
+                                <p>{{ item.product_size }}</p>
+                            </td>
+                            <td>
+                                <p>{{ item.product_quantity }}</p>
+                            </td>
+                            <td>
+                                    {% if item.product_quantity != 0 %}
+                                        <p>Available</p>
+                                    {% else %}
+                                        <p>Out of Stock</p>
+                                    {% endif %}
+                            </td>
+
+                            <td>
+                                <div>
+                                    <input class="hidden id" value="{{ item.product_id }}">
+                                    <input class="hidden type" value="{{ item.product_type }}">
+                                    <input class="hidden state" value="{{ item.product_state }}">
+                                    <input class="hidden quantity" value="{{ item.product_quantity }}">
+                                    <span class="quantity">0</span>
+                                    <button class="btn btn-default add">+</button>
+                                    <button class="btn btn-default sub">-</button>
+                                </div>
+
+                            </td>
+
+                        </tr>
+                        {% endif %}
+                    {% endfor %}
+
+                </table>
+              </div>
+            </div>
+            </div>
+
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel panel-default" style="margin-top: 50px">
+              <div class="panel-heading">
+                <h3 class="panel-title">Sandwiches Menu</h3>
+              </div>
+              <div class="panel-body">
+                <table class="table">
+                    {% for item in allproducts %}
+                        {% if item.product_type == 'Sandwiches' %}
+                        <tr>
+                            <td>
+                                <p>{{ item.product_name }}</p>
+                            </td>
+                            <td>
+                                <p>{{ item.product_size }}</p>
+                            </td>
+                            <td>
+                                <p>{{ item.product_quantity }}</p>
+                            </td>
+                            <td>
+                                    {% if item.product_quantity != 0 %}
+                                        <p>Available</p>
+                                    {% else %}
+                                        <p>Out of Stock</p>
+                                    {% endif %}
+                            </td>
+
+                            <td>
+                                <div>
+                                    <input class="hidden id" value="{{ item.product_id }}">
+                                    <input class="hidden type" value="{{ item.product_type }}">
+                                    <input class="hidden state" value="{{ item.product_state }}">
+                                    <input class="hidden quantity" value="{{ item.product_quantity }}">
+                                    <span class="quantity">0</span>
+                                    <button class="btn btn-default add">+</button>
+                                    <button class="btn btn-default sub">-</button>
+                                </div>
+
+                            </td>
+
+                        </tr>
+                        {% endif %}
+                    {% endfor %}
+
+                </table>
+              </div>
+            </div>
+            </div>
+
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel panel-default" style="margin-top: 50px">
+              <div class="panel-heading">
+                <h3 class="panel-title">Total</h3>
+              </div>
+              <div class="panel-body">
+                  <form action="" method="POST">
+                      {% csrf_token %}
+                      <button class="btn btn-primary" id='submit' type="submit">Pay Now</button>
+
+                  </form>
+              </div>
+            </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div style="margin-top: 50px">
+                <p style="text-align: center">copyright@group6coffee</p>
+            </div>
+        </div>
+    </div>
+
+    <script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+    <script>
+        $(function () {
+            let before;
+            let after;
+            let type;
+            let quantity;
+            let state;
+            let dict = [];
+            let id;
+
+
+            $(".add").click(function () {
+                before = $(this).parent().children('span').text();
+                id = $(this).parent().children('input.id').val();
+                type = $(this).parent().children('input.type').val();
+                quantity = $(this).parent().children('input.quantity').val();
+                state = $(this).parent().children('input.state').val();
+
+                if (type=='Coffee' || type=='Tea'){
+                    if (state){
+                        if (Number(before)<=50){
+                            dict[id] = Number(before)+1;
+                            $(this).parent().children('span').text(Number(before)+1);
+                        }
+                    }
+                }
+
+                if (type=='Sandwiches' || type=='Cake'){
+                    if (state){
+                        if (Number(before)<Number(quantity)){
+                            dict[id] = Number(before)+1;
+                            $(this).parent().children('span').text(Number(before)+1);
+                        }
+                    }
+                }
+            })
+            $(".sub").click(function () {
+                after = $(this).parent().children('span').text();
+                if (Number(after)>0){
+                    dict[id] = Number(after)-1;
+                    $(this).parent().children('span').text(Number(after)-1);
+                }
+
+                for (let i=0;i<dict.length;i++){
+                    console.log(dict[i])
+                }
+
+            })
+
+            $("#submit").click(function () {
+                fetch('handleorder',{
+                    method: "POST",
+                    body: dict
+                }).then(function (res) {
+                    console.log(res.text())
+                    if (res.ok){
+                        console.log("yes")
+                    } else {
+                        console.log("no")
+                    }
+                })
+            })
+
+
+
+        })
+    </script>
+
+</body>
+</html>
