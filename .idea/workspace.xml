@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6942b195-7354-4e8e-aa21-921d3840cb42" name="Default Changelist" comment="ALl">
-      <change afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyFirstDjango/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/MyFirstDjango/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coffee/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coffee/migrations/0002_auto_20190420_0208.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coffee/migrations/0003_staff_staff_email.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coffee/migrations/0004_staff_is_active.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coffee/migrations/0005_auto_20190420_0920.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coffee/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/coffee/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coffee/templates/barista.html" beforeDir="false" afterPath="$PROJECT_DIR$/coffee/templates/barista.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coffee/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/coffee/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/coffee/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/coffee/templates/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/coffee/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/coffee/templates/register.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/coffee/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/coffee/views.py" afterDir="false" />
@@ -24,7 +17,7 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/MyFirstDjango$test.coverage" NAME="test Coverage Results" MODIFIED="1555980491288" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/MyFirstDjango$manage.coverage" NAME="manage Coverage Results" MODIFIED="1556086048544" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MyFirstDjango$manage.coverage" NAME="manage Coverage Results" MODIFIED="1556926224475" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -48,8 +41,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/coffee/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1248">
-              <caret line="95" column="13" selection-start-line="95" selection-start-column="13" selection-end-line="95" selection-end-column="13" />
+            <state relative-caret-position="355">
+              <caret line="223" lean-forward="true" selection-start-line="223" selection-end-line="223" />
               <folding>
                 <element signature="e#46#85#0" expanded="true" />
               </folding>
@@ -60,17 +53,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/coffee/templates/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="592">
-              <caret line="37" selection-start-line="37" selection-end-line="37" />
+            <state relative-caret-position="107">
+              <caret line="27" column="6" lean-forward="true" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="6" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/coffee/templates/register.html">
+        <entry file="file://$PROJECT_DIR$/coffee/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="608">
-              <caret line="38" column="32" selection-start-line="38" selection-start-column="32" selection-end-line="38" selection-end-column="32" />
+            <state relative-caret-position="160">
+              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/coffee/templates/barista.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="343">
+              <caret line="24" column="51" selection-start-line="24" selection-start-column="51" selection-end-line="24" selection-end-column="51" />
+              <folding>
+                <element signature="n#style#0;n#h1#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -78,8 +83,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/coffee/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="10" column="42" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="42" />
+            <state relative-caret-position="96">
+              <caret line="6" column="47" lean-forward="true" selection-start-line="6" selection-start-column="47" selection-end-line="6" selection-end-column="47" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
               </folding>
@@ -102,17 +107,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MyFirstDjango/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="864">
-              <caret line="54" selection-start-line="54" selection-end-line="54" />
+            <state relative-caret-position="1920">
+              <caret line="120" column="13" lean-forward="true" selection-start-line="120" selection-start-column="13" selection-end-line="120" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/myNotes">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="32">
-              <caret line="2" column="10" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="36" />
+            <state relative-caret-position="176">
+              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/coffee/templates/register.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="624">
+              <caret line="39" column="36" selection-start-line="39" selection-start-column="36" selection-end-line="39" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -170,23 +184,24 @@
         <option value="$PROJECT_DIR$/MyFirstDjango/urls.py" />
         <option value="$PROJECT_DIR$/blog/views.py" />
         <option value="$PROJECT_DIR$/coffee/templates/products_display.html" />
-        <option value="$PROJECT_DIR$/coffee/templates/barista.html" />
         <option value="$PROJECT_DIR$/coffee/urls.py" />
         <option value="$PROJECT_DIR$/coffee/templates/staff.html" />
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/coffee/models.py" />
         <option value="$PROJECT_DIR$/MyFirstDjango/settings.py" />
-        <option value="$PROJECT_DIR$/coffee/templates/register.html" />
+        <option value="$PROJECT_DIR$/coffee/templates/index.html" />
         <option value="$PROJECT_DIR$/coffee/templates/login.html" />
+        <option value="$PROJECT_DIR$/coffee/templates/register.html" />
         <option value="$PROJECT_DIR$/coffee/views.py" />
+        <option value="$PROJECT_DIR$/coffee/templates/barista.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1805" />
-    <option name="y" value="-97" />
-    <option name="width" value="1308" />
-    <option name="height" value="831" />
+    <option name="x" value="1894" />
+    <option name="y" value="-62" />
+    <option name="width" value="1239" />
+    <option name="height" value="862" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -200,6 +215,23 @@
             <path>
               <item name="MyFirstDjango" type="b2602c69:ProjectViewProjectNode" />
               <item name="MyFirstDjango" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MyFirstDjango" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MyFirstDjango" type="462c0819:PsiDirectoryNode" />
+              <item name="coffee" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MyFirstDjango" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MyFirstDjango" type="462c0819:PsiDirectoryNode" />
+              <item name="coffee" type="462c0819:PsiDirectoryNode" />
+              <item name="migrations" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MyFirstDjango" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MyFirstDjango" type="462c0819:PsiDirectoryNode" />
+              <item name="coffee" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MyFirstDjango" type="b2602c69:ProjectViewProjectNode" />
@@ -342,12 +374,12 @@
       <workItem from="1555979798691" duration="3736000" />
       <workItem from="1555999987564" duration="7082000" />
       <workItem from="1556609175899" duration="415000" />
-      <workItem from="1556925323707" duration="517000" />
+      <workItem from="1556925323707" duration="3141000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75315000" />
+    <option name="totallyTimeSpent" value="77939000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -359,15 +391,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1904" y="-170" width="1308" height="831" extended-state="0" />
+    <frame x="2102" y="-102" width="1113" height="862" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18957347" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15312792" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3295964" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.14507772" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.15974025" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.26181817" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -498,23 +530,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/coffee/templates/barista.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="28" column="49" selection-start-line="28" selection-start-column="49" selection-end-line="28" selection-end-column="49" />
-          <folding>
-            <element signature="n#style#0;n#h1#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/coffee/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="832">
-          <caret line="52" column="36" selection-start-line="52" selection-start-column="36" selection-end-line="52" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -591,40 +606,6 @@
     <entry file="file://$PROJECT_DIR$/coffee/migrations/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/coffee/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1248">
-          <caret line="95" column="13" selection-start-line="95" selection-start-column="13" selection-end-line="95" selection-end-column="13" />
-          <folding>
-            <element signature="e#46#85#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/coffee/templates/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="592">
-          <caret line="37" selection-start-line="37" selection-end-line="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/coffee/templates/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
-          <caret line="38" column="32" selection-start-line="38" selection-start-column="32" selection-end-line="38" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/coffee/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="10" column="42" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/coffee/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="752">
@@ -635,17 +616,68 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MyFirstDjango/settings.py">
+    <entry file="file://$PROJECT_DIR$/myNotes">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="864">
-          <caret line="54" selection-start-line="54" selection-end-line="54" />
+        <state relative-caret-position="176">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/myNotes">
+    <entry file="file://$PROJECT_DIR$/coffee/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="2" column="10" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="36" />
+        <state relative-caret-position="160">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coffee/templates/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="624">
+          <caret line="39" column="36" selection-start-line="39" selection-start-column="36" selection-end-line="39" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coffee/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="6" column="47" lean-forward="true" selection-start-line="6" selection-start-column="47" selection-end-line="6" selection-end-column="47" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MyFirstDjango/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1920">
+          <caret line="120" column="13" lean-forward="true" selection-start-line="120" selection-start-column="13" selection-end-line="120" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coffee/templates/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="107">
+          <caret line="27" column="6" lean-forward="true" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coffee/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="355">
+          <caret line="223" lean-forward="true" selection-start-line="223" selection-end-line="223" />
+          <folding>
+            <element signature="e#46#85#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coffee/templates/barista.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="24" column="51" selection-start-line="24" selection-start-column="51" selection-end-line="24" selection-end-column="51" />
+          <folding>
+            <element signature="n#style#0;n#h1#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -162,6 +162,7 @@ def register(request):
         if Staff.objects.filter(staff_email=email).exists():
             return render(request, 'register.html', {'errmsg': 'email is exist'})
 
+
         # method 1 to register
         staff = Staff()
         staff.staff_username = username
@@ -217,20 +218,19 @@ def login(request):
     else:
         password = request.POST.get('pwd')
         email = request.POST.get('email')
-        # password = make_password(password)
 
         if not all([password, email]):
-            return render(request, 'login.html', {'errmsg':'data not complete'})
+            return render(request, 'login.html', {'errmsg': 'not empty'})
 
         if Staff.objects.filter(staff_email=email).exists():
             staff = Staff.objects.get(staff_email=email)
             if check_password(password, staff.staff_password):
-                return redirect('/coffee/barista')
+                return render(request, 'barista.html', {'staffName': staff.staff_username})
+                # return redirect('/coffee/barista')
             else:
                 return render(request, 'login.html', {'errmsg': 'email or password is wrong'})
         else:
             return render(request, 'login.html', {'errmsg':'email or password is wrong'})
-
 
 
 def get_staff(request):
