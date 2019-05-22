@@ -41,6 +41,14 @@ class Product(models.Model):
         return self.product_name + "  " + self.product_size + "  " + state
 
 
+class Order(models.Model):
+    order_id = models.AutoField(primary_key=True)
+    order_item_id = models.IntegerField(default=0)
+
+    def __str__(self):
+        return str(self.order_id) + " , item id:" + str(self.order_item_id)
+
+
 class OrderItem(models.Model):
     status = (
         ("Preparing", "Preparing"),
@@ -54,11 +62,10 @@ class OrderItem(models.Model):
     order_number = models.IntegerField(default=1)
     order_sub_total = models.DecimalField(max_digits=8, decimal_places=2)
     created_at = models.DateTimeField(auto_now=True)
-    user_id = models.IntegerField()
-    display_no = models.IntegerField()
+    user_name = models.CharField(max_length=255, default="N")
 
     def __str__(self):
-        return self.product_name + ",   order status : " + self.order_status
+        return self.product_name + ",   order status : " + self.order_status + ", id:" + str(self.order_item_id)
 
 
 class Staff(models.Model):
@@ -71,8 +78,6 @@ class Staff(models.Model):
 
     def __str__(self):
         return self.staff_username
-
-
 
 
 class Ingredient(models.Model):
@@ -89,3 +94,14 @@ class Ingredient(models.Model):
 
     def __str__(self):
         return self.input_name + " " + str(self.quantity)
+
+
+class Paymentstatus(models.Model):
+    paymentstatus = models.BooleanField(default=False)
+    ordercontent = models.CharField(max_length=255, default="N")
+
+    def __str__(self):
+        if self.paymentstatus:
+            return "False"
+        else:
+            return "True"

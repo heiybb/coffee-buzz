@@ -7,5 +7,7 @@ urlpatterns = [
     path('login', group6coffee.views.login),
     path('productlist',group6coffee.views.productlist),
     path('logout',group6coffee.views.logout),
-    path('handleorder',group6coffee.views.handleorder)
+    path('orderlist',group6coffee.views.orderlist),
+    path('handleorder',group6coffee.views.handleorder),
+    path('cancelorder',group6coffee.views.cancelorder)
 ]

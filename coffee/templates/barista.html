@@ -16,7 +16,7 @@
         <div class="row">
             <ul class="nav nav-pills navbar-right">
               <li role="presentation"><a href="">HI, {{ staffName }}</a></li>
-              <li role="presentation" class="active"><a href="/coffee/staff">Logout</a></li>
+              <li role="presentation" class="active"><a href="/coffee/login">Logout</a></li>
             </ul>
         </div>
     </div>
@@ -37,13 +37,26 @@
                         </div>
                         <div class="panel-body">
                             <div>
-                                <h3>Number : {{ order.order_number }}</h3>
+                                <h3>Quantity : {{ order.order_number }}</h3>
                                 <h3>Status : {{ order.order_status }}</h3>
                                 <h3>Order Time: {{ order.created_at }}</h3>
+                                <h3>Customer: {{ order.user_name}}</h3>
+                                <h3>Order No: {{ order.order_item_id }}</h3>
                             </div>
                             <div class="pull-right">
-                                <button class="btn btn-primary btn-lg">Complete</button>
-                                <button class="btn btn-primary btn-lg">Remove</button>
+                                <form action="" method="POST">
+                                {% csrf_token %}
+                                <input class="hidden id" value="{{ order.order_item_id }}">
+
+                                {% if order.order_status == 'Preparing' %}
+                                    <button class="btn btn-primary btn-lg" type="submit" id='submit'>Complete</button>
+                                {% endif %}
+                                {% if order.order_status == 'Done' %}
+                                    <button class="btn btn-primary btn-lg" type="button" disabled>Done</button>
+                                    <button class="btn btn-primary btn-lg" type="submit" id='submitRemove'>Remove</button>
+                                {% endif %}
+
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -52,6 +65,62 @@
             </div>
         </div>
     </div>
+
+    <div class="container">
+        <div class="row">
+            <div style="margin-top: 50px">
+                <p style="text-align: center">copyright@group6coffee</p>
+            </div>
+        </div>
+    </div>
+
+    <script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+    <script>
+         $(function () {
+            let dict = {};
+            let id;
+            $("#submitRemove").click(function () {
+                id = $(this).parent().children('input.id').val();
+                dict['order_item_id'] = id;
+
+                fetch('removeorder',{
+                    method: "POST",
+                    body: JSON.stringify(dict)
+                }).then(function (res) {
+                    console.log(res.text());
+                    if (res.ok){
+                        $('#showpayment').text('Successful');
+                        console.log("yes")
+                    } else {
+                        console.log("no")
+                    }
+                })
+
+            });
+
+            $("#submit").click(function () {
+                id = $(this).parent().children('input.id').val();
+                dict['order_item_id'] = id
+
+                fetch('completeorder',{
+                    method: "POST",
+                    body: JSON.stringify(dict)
+                }).then(function (res) {
+                    console.log(res.text());
+                    if (res.ok){
+                        $('#showpayment').text('Successful');
+                        console.log("yes")
+                    } else {
+                        console.log("no")
+                    }
+                })
+            })
+        })
+    </script>
+
 
 </body>
 </html>

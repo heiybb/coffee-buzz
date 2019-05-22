@@ -16,9 +16,7 @@
 <div class="container">
     <div class="row">
         <ul class="nav nav-pills">
-          <li role="presentation" ><a href="/coffee/staff">Home</a></li>
-              <li role="presentation" class="active"><a href="/coffee/login">Login</a></li>
-              <li role="presentation" ><a href="/coffee/register">Register</a></li>
+              <li role="presentation" class="active"><a href="/coffee/login">Home</a></li>
         </ul>
     </div>
 </div>
@@ -38,7 +36,7 @@
               <div class="form-group">
                 <label for="email" class="col-sm-2 control-label">Email</label>
                 <div class="col-sm-6">
-                    <input type="email" name="email" id="email" class="form-control">
+                    <input type="email" name="email" id="email" class="form-control" required>
                     <span>{{ errmsg }}</span>
                 </div>
               </div>
@@ -46,7 +44,7 @@
               <div class="form-group">
                 <label for="pwd" class="col-sm-2 control-label">Password</label>
                 <div class="col-sm-6">
-                  <input type="password" name="pwd" id="pwd" class="form-control">
+                  <input type="password" name="pwd" id="pwd" class="form-control" required>
                     <span>{{ errmsg }}</span>
                 </div>
               </div>

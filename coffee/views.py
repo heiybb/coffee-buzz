@@ -7,6 +7,7 @@ from coffee.models import Article
 from django.core.paginator import Paginator
 from coffee.models import Product
 from coffee.models import OrderItem
+# from coffee.models import Order
 from django import forms
 from coffee.models import Staff
 from django.views.decorators.csrf import csrf_exempt
@@ -18,15 +19,12 @@ from django.conf import settings
 from django.contrib.auth import authenticate
 from django.core.mail import send_mail
 from django.contrib import auth
+from django.views.decorators.csrf import csrf_exempt
+
+import json
 
 
 # Create your views here.
-
-
-def hello_world(request):
-    return HttpResponse("hello clara")
-
-
 def article_content(request):
     article = Article.objects.all()[0]
     title = article.title
@@ -123,7 +121,8 @@ def barista_page(request):
     all_order_item = OrderItem.objects.get_queryset().order_by('-created_at')
     return render(request, "barista.html",
                   {
-                      "all_order_item": all_order_item
+                      "all_order_item": all_order_item,
+                      'staffName': 'barista'
                   })
 
 
@@ -224,9 +223,10 @@ def login(request):
 
         if Staff.objects.filter(staff_email=email).exists():
             staff = Staff.objects.get(staff_email=email)
-            if check_password(password, staff.staff_password):
-                return render(request, 'barista.html', {'staffName': staff.staff_username})
-                # return redirect('/coffee/barista')
+
+            if staff.staff_password == password:
+                return redirect('/coffee/barista')
+                # return render(request, 'barista.html', {'staffName': staff.staff_username})
             else:
                 return render(request, 'login.html', {'errmsg': 'email or password is wrong'})
         else:
@@ -237,10 +237,60 @@ def get_staff(request):
     return render(request, 'staff.html')
 
 
+def updateOrder(order_item_id):
+    order_item_id = int(order_item_id)
+    oi = OrderItem.objects.get(order_item_id=order_item_id)
+    oi.order_status = 'Done'
+    oi.save()
 
 
+@csrf_exempt
+def completeorder(request):
+    if request.method == "POST":
+        tt = request.body
+        order = json.loads(tt)
+        order_item_id = ''
+        is_valid = False
+
+        for item in order:
+            if item == 'order_item_id':
+                order_item_id = order[item]
+                print(order[item])
+                is_valid = True
+
+        if is_valid:
+            updateOrder(order_item_id)
+
+        return HttpResponse(status=200)
 
 
+def removeMyOrder(order_item_id):
+    order_item_id = int(order_item_id)
+    oi = OrderItem.objects.get(order_item_id=order_item_id)
+    oi.delete()
+
+    # oo = Order.objects.get(order_item_id=order_item_id)
+    # oo.delete()
+
+
+@csrf_exempt
+def removeorder(request):
+    if request.method == "POST":
+        tt = request.body
+        order = json.loads(tt)
+        order_item_id = ''
+        is_valid = False
+
+        for item in order:
+            if item == 'order_item_id':
+                order_item_id = order[item]
+                print(order[item])
+                is_valid = True
+
+        if is_valid:
+            removeMyOrder(order_item_id)
+
+        return HttpResponse(status=200)
 
 
 

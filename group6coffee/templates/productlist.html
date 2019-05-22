@@ -16,10 +16,24 @@
     <div class="container">
         <div class="row">
             <ul class="nav nav-pills">
-              <li role="presentation" class="active"><a href="/group6coffee/index">Home</a></li>
-              <li role="presentation"><a href="/group6coffee/productlist">{{ user_name }}</a></li>
-              <li role="presentation"><a href="/group6coffee/logout">Logout</a></li>
+                <li role="presentation"><a href="/group6coffee/index">Home</a></li>
+                <li role="presentation" class="active"><a href="/group6coffee/productlist">{{ user_name }}</a></li>
+                <li role="presentation"><a href="/group6coffee/orderlist">Order list</a></li>
+                <li role="presentation"><a href="/group6coffee/logout">Logout</a></li>
             </ul>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="jumbotron">
+                <h2 style="text-align: center">Take order now</h2>
+            </div>
+
+            <div class="col-md-8 col-md-offset-2">
+
+                <h3 id="showpayment">{{ showorderinfo }}</h3>
+            </div>
         </div>
     </div>
 
@@ -54,6 +68,8 @@
                             </td>
                             <td>
                                 <div>
+                                    <input class="hidden user_name" value="{{ user_name }}">
+                                    <input class="hidden product_name" value="{{ item.product_name }}">
                                     <input class="hidden id" value="{{ item.product_id }}">
                                     <input class="hidden type" value="{{ item.product_type }}">
                                     <input class="hidden state" value="{{ item.product_state }}">
@@ -102,6 +118,8 @@
 
                             <td>
                                 <div>
+                                    <input class="hidden user_name" value="{{ user_name }}">
+                                    <input class="hidden product_name" value="{{ item.product_name }}">
                                     <input class="hidden id" value="{{ item.product_id }}">
                                     <input class="hidden type" value="{{ item.product_type }}">
                                     <input class="hidden state" value="{{ item.product_state }}">
@@ -151,6 +169,8 @@
 
                             <td>
                                 <div>
+                                    <input class="hidden user_name" value="{{ user_name }}">
+                                    <input class="hidden product_name" value="{{ item.product_name }}">
                                     <input class="hidden id" value="{{ item.product_id }}">
                                     <input class="hidden type" value="{{ item.product_type }}">
                                     <input class="hidden state" value="{{ item.product_state }}">
@@ -200,6 +220,8 @@
 
                             <td>
                                 <div>
+                                    <input class="hidden user_name" value="{{ user_name }}">
+                                    <input class="hidden product_name" value="{{ item.product_name }}">
                                     <input class="hidden id" value="{{ item.product_id }}">
                                     <input class="hidden type" value="{{ item.product_type }}">
                                     <input class="hidden state" value="{{ item.product_state }}">
@@ -257,16 +279,24 @@
             let type;
             let quantity;
             let state;
-            let dict = [];
+            let dict = {};
             let id;
+            let product_name;
+            let user_name;
 
 
             $(".add").click(function () {
+
                 before = $(this).parent().children('span').text();
                 id = $(this).parent().children('input.id').val();
+                product_name = $(this).parent().children('input.product_name').val();
+                user_name = $(this).parent().children('input.user_name').val();
                 type = $(this).parent().children('input.type').val();
                 quantity = $(this).parent().children('input.quantity').val();
                 state = $(this).parent().children('input.state').val();
+
+                {#dict['product_name'] = product_name;#}
+                dict['user_name'] = user_name;
 
                 if (type=='Coffee' || type=='Tea'){
                     if (state){
@@ -288,28 +318,33 @@
             })
             $(".sub").click(function () {
                 after = $(this).parent().children('span').text();
+                product_name = $(this).parent().children('input.product_name').val();
+                user_name = $(this).parent().children('input.user_name').val();
+                {#dict['product_name'] = product_name;#}
+                dict['user_name'] = user_name;
+
                 if (Number(after)>0){
                     dict[id] = Number(after)-1;
                     $(this).parent().children('span').text(Number(after)-1);
                 }
 
-                for (let i=0;i<dict.length;i++){
-                    console.log(dict[i])
-                }
-
             })
 
             $("#submit").click(function () {
+                console.log(JSON.stringify(dict));
+
                 fetch('handleorder',{
                     method: "POST",
-                    body: dict
+                    body: JSON.stringify(dict)
                 }).then(function (res) {
-                    console.log(res.text())
+                    console.log(res.text());
                     if (res.ok){
+                        $('#showpayment').text('Successful');
                         console.log("yes")
                     } else {
                         console.log("no")
                     }
+                    $('#showpayment').text('Successful');
                 })
             })
 
