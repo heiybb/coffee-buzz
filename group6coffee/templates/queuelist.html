@@ -18,8 +18,8 @@
             <ul class="nav nav-pills">
               <li role="presentation" ><a href="/group6coffee/index">Home</a></li>
               <li role="presentation"><a href="/group6coffee/productlist">{{ user_name }}</a></li>
-                <li role="presentation" class="active"><a href="/group6coffee/orderlist">Order list</a></li>
-                <li role="presentation"><a href="/group6coffee/queuelist">Queue list</a></li>
+                <li role="presentation" ><a href="/group6coffee/orderlist">Order list</a></li>
+                <li role="presentation" class="active"><a href="/group6coffee/queuelist">Queue list</a></li>
               <li role="presentation"><a href="/group6coffee/logout">Logout</a></li>
             </ul>
         </div>
@@ -28,7 +28,7 @@
     <div class="container">
         <div class="row">
             <div class="jumbotron">
-                <h2 style="text-align: center">Your order</h2>
+                <h2 style="text-align: center">All Queue List</h2>
             </div>
         </div>
     </div>
@@ -95,14 +95,6 @@
 
                             <td>
                                 <div>
-                                    {% if item.order_status == 'Preparing' %}
-                                        <form action="" method="POST">
-                                        {% csrf_token %}
-                                            <input class="hidden user_name" value="{{ user_name }}">
-                                         <input class="hidden id" value="{{ item.order_item_id }}">
-                                        <button class="btn btn-primary" id='submit' type="submit">Cancel</button>
-                                        </form>
-                                    {% endif %}
 
                                 </div>
                             </td>
@@ -132,33 +124,7 @@
   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
   crossorigin="anonymous"></script>
     <script>
-         $(function () {
-            let dict = {};
-            let id;
-            let user_name;
 
-            $("#submit").click(function () {
-                id = $(this).parent().children('input.id').val();
-                user_name = $(this).parent().children('input.user_name').val();
-
-                dict['user_name'] = user_name
-                dict['order_item_id'] = id
-
-                fetch('cancelorder',{
-                    method: "POST",
-                    body: JSON.stringify(dict)
-                }).then(function (res) {
-                    console.log(res.text());
-                    if (res.ok){
-                        $('#showpayment').text('Successful');
-                        console.log("yes")
-                    } else {
-                        console.log("no")
-                    }
-                })
-            })
-
-        })
     </script>
 
 </body>

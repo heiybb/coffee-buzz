@@ -92,6 +92,16 @@ def orderlist(request):
         return render(request, 'orderlist.html',{'user_name': request.user,'orders':orders})
 
 
+def queuelist(request):
+    if not request.user.is_authenticated:
+        return render(request, 'user_login.html')
+    else:
+        # orders = OrderItem.objects.get_queryset().order_by('-article_id')
+        orders = OrderItem.objects.all();
+        return render(request, 'queuelist.html',{'user_name': request.user,'orders':orders})
+
+
+
 def getproductinfo(id):
     info = []
     id = int(id)

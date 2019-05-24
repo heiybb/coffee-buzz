@@ -9,5 +9,6 @@ urlpatterns = [
     path('logout',group6coffee.views.logout),
     path('orderlist',group6coffee.views.orderlist),
     path('handleorder',group6coffee.views.handleorder),
-    path('cancelorder',group6coffee.views.cancelorder)
+    path('cancelorder',group6coffee.views.cancelorder),
+    path('queuelist',group6coffee.views.queuelist)
 ]
