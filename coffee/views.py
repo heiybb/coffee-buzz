@@ -264,6 +264,43 @@ def completeorder(request):
         return HttpResponse(status=200)
 
 
+@csrf_exempt
+def baristaOrder(request):
+    if request.method == 'POST':
+        tt = request.body
+        order = json.loads(tt)
+        order_item_id = ''
+        order_status = ''
+
+
+        for item in order:
+            if item == 'order_item_id':
+                order_item_id = order[item]
+                print(order_item_id)
+            if item == 'order_status':
+                order_status = order['order_status']
+                print(order_status)
+
+        if order_status == 'Receive':
+            order_status = 'Preparing'
+        elif order_status == "Preparing":
+            order_status = 'Done'
+        elif order_status == 'Done':
+            order_status = 'Remove'
+
+        order_item_id = int(order_item_id)
+        print(order_status)
+
+        oi = OrderItem.objects.get(order_item_id=order_item_id)
+        oi.order_status = order_status
+        oi.save()
+
+        return HttpResponse(status=200)
+
+
+
+
+
 def removeMyOrder(order_item_id):
     order_item_id = int(order_item_id)
     oi = OrderItem.objects.get(order_item_id=order_item_id)

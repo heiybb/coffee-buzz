@@ -16,7 +16,7 @@
         <div class="row">
             <ul class="nav nav-pills navbar-right">
               <li role="presentation"><a href="">HI, {{ staffName }}</a></li>
-              <li role="presentation" class="active"><a href="/coffee/login">Logout</a></li>
+              <li role="presentation" class="active"><a href="/coffee/staff">Logout</a></li>
             </ul>
         </div>
     </div>
@@ -30,6 +30,8 @@
         <div class="row">
             <div>
                 {% for order in all_order_item %}
+                    {% if order.order_status != 'Remove' %}
+
                     <div class="col-md-12">
                     <div class="panel panel-info">
                         <div class="panel-heading">
@@ -47,13 +49,23 @@
                                 <form action="" method="POST">
                                 {% csrf_token %}
                                 <input class="hidden id" value="{{ order.order_item_id }}">
+                                <input class="hidden status" value="{{ order.order_status }}">
+
+
+                                {% if order.order_status == 'Receive' %}
+                                    <button class="btn btn-primary btn-lg" type="submit" id='submit'>Receive</button>
+                                {% endif %}
 
                                 {% if order.order_status == 'Preparing' %}
-                                    <button class="btn btn-primary btn-lg" type="submit" id='submit'>Complete</button>
+                                    <button class="btn btn-primary btn-lg" type="submit" id='submit'>Preparing</button>
                                 {% endif %}
+
                                 {% if order.order_status == 'Done' %}
-                                    <button class="btn btn-primary btn-lg" type="button" disabled>Done</button>
-                                    <button class="btn btn-primary btn-lg" type="submit" id='submitRemove'>Remove</button>
+                                    <button class="btn btn-primary btn-lg" type="submit" id='submit'>Done</button>
+                                {% endif %}
+
+                                {% if order.order_status == 'Remove' %}
+                                    <button class="btn btn-primary btn-lg hidden" type="submit" id='submit'>Remove</button>
                                 {% endif %}
 
                                 </form>
@@ -61,6 +73,7 @@
                         </div>
                     </div>
                     </div>
+                    {% endif %}
                 {% endfor %}
             </div>
         </div>
@@ -82,30 +95,17 @@
          $(function () {
             let dict = {};
             let id;
-            $("#submitRemove").click(function () {
-                id = $(this).parent().children('input.id').val();
-                dict['order_item_id'] = id;
-
-                fetch('removeorder',{
-                    method: "POST",
-                    body: JSON.stringify(dict)
-                }).then(function (res) {
-                    console.log(res.text());
-                    if (res.ok){
-                        $('#showpayment').text('Successful');
-                        console.log("yes")
-                    } else {
-                        console.log("no")
-                    }
-                })
-
-            });
-
+            let status;
             $("#submit").click(function () {
                 id = $(this).parent().children('input.id').val();
-                dict['order_item_id'] = id
+                status = $(this).parent().children('input.status').val();
+                dict['order_item_id'] = id;
+                dict['order_status'] = status;
 
-                fetch('completeorder',{
+                console.log(id)
+                console.log(status)
+
+                fetch('baristaOrder',{
                     method: "POST",
                     body: JSON.stringify(dict)
                 }).then(function (res) {
@@ -118,6 +118,9 @@
                     }
                 })
             })
+
+
+
         })
     </script>
 

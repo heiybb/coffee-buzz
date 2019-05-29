@@ -51,8 +51,10 @@ class Order(models.Model):
 
 class OrderItem(models.Model):
     status = (
+        ("Receive", "Receive"),
         ("Preparing", "Preparing"),
-        ("Done", "Done")
+        ("Done", "Done"),
+        ("Remove", "Remove")
     )
 
     order_item_id = models.AutoField(primary_key=True)

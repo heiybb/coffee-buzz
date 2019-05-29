@@ -76,7 +76,7 @@ def productlist(request):
         else:
             pay = Paymentstatus.objects.all()
             for i in pay:
-                showorderinfo = i.ordercontent + ', Payment Successful'
+                showorderinfo = i.ordercontent + ', order complete.'
                 i.ordercontent = 'N'
                 i.save()
 
@@ -142,7 +142,7 @@ def handleorder(request):
                 product_name = temp[0]
                 product_price = temp[1]
                 product_type = temp[2]
-                order_status = 'Preparing'
+                order_status = 'Receive'
                 order_number = int(order[i])
                 order_sub_total = product_price * order_number
                 oi = OrderItem(product_name=product_name,product_price=product_price,order_status=order_status,

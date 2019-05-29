@@ -18,7 +18,7 @@
             <ul class="nav nav-pills">
               <li role="presentation" ><a href="/group6coffee/index">Home</a></li>
               <li role="presentation"><a href="/group6coffee/productlist">{{ user_name }}</a></li>
-                <li role="presentation" ><a href="/group6coffee/orderlist">Order list</a></li>
+                <li role="presentation" ><a href="/group6coffee/orderlist">My Order list</a></li>
                 <li role="presentation" class="active"><a href="/group6coffee/queuelist">Queue list</a></li>
               <li role="presentation"><a href="/group6coffee/logout">Logout</a></li>
             </ul>
@@ -87,7 +87,11 @@
                             </td>
 
                             <td>
-                                <p>{{ item.order_status }}</p>
+                                {%  if item.order_status == "Remove" %}
+                                    <p>Done</p>
+                                {% else %}
+                                    <p>{{ item.order_status }}</p>
+                                {% endif %}
                             </td>
                             <td>
                                 <p>{{ item.order_item_id }}</p>

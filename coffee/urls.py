@@ -13,4 +13,5 @@ urlpatterns = [
     path('staff', coffee.views.get_staff),
     path('completeorder', coffee.views.completeorder),
     path('removeorder', coffee.views.removeorder),
+    path('baristaOrder', coffee.views.baristaOrder),
 ]
