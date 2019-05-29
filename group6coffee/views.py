@@ -194,9 +194,6 @@ def cancelorder(request):
         print(order)
 
         for item in order:
-            # if item == 'user_name':
-            #     user_name = order[item]
-            #     print(order[item])
             if item == 'order_item_id':
                 order_item_id = order[item]
                 print(order[item])

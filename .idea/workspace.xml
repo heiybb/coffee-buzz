@@ -2,17 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6942b195-7354-4e8e-aa21-921d3840cb42" name="Default Changelist" comment="ALl">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coffee/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/coffee/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coffee/templates/barista.html" beforeDir="false" afterPath="$PROJECT_DIR$/coffee/templates/barista.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coffee/templates/staff.html" beforeDir="false" afterPath="$PROJECT_DIR$/coffee/templates/staff.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coffee/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/coffee/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coffee/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/coffee/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/group6coffee/templates/home_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/group6coffee/templates/home_login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/group6coffee/templates/orderlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/group6coffee/templates/orderlist.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/group6coffee/templates/productlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/group6coffee/templates/productlist.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/group6coffee/templates/queuelist.html" beforeDir="false" afterPath="$PROJECT_DIR$/group6coffee/templates/queuelist.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/group6coffee/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/group6coffee/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -55,6 +44,18 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/group6coffee/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="350">
+              <caret line="195" column="26" selection-start-line="195" selection-start-column="26" selection-end-line="195" selection-end-column="26" />
+              <folding>
+                <element signature="e#46#111#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/coffee/templates/barista.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -64,11 +65,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/coffee/templates/staff.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
-              <caret line="23" column="17" lean-forward="true" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
+            <state relative-caret-position="78">
+              <caret line="14" column="7" lean-forward="true" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -174,7 +175,6 @@
         <option value="$PROJECT_DIR$/group6coffee/templates/user_login.html" />
         <option value="$PROJECT_DIR$/group6coffee/templates/user_register.html" />
         <option value="$PROJECT_DIR$/coffee/models.py" />
-        <option value="$PROJECT_DIR$/group6coffee/views.py" />
         <option value="$PROJECT_DIR$/coffee/urls.py" />
         <option value="$PROJECT_DIR$/group6coffee/templates/orderlist.html" />
         <option value="$PROJECT_DIR$/group6coffee/templates/home_login.html" />
@@ -183,11 +183,12 @@
         <option value="$PROJECT_DIR$/group6coffee/templates/queuelist.html" />
         <option value="$PROJECT_DIR$/coffee/templates/barista.html" />
         <option value="$PROJECT_DIR$/coffee/templates/staff.html" />
+        <option value="$PROJECT_DIR$/group6coffee/views.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="143" />
+    <option name="x" value="42" />
     <option name="y" value="23" />
     <option name="width" value="1242" />
     <option name="height" value="777" />
@@ -405,12 +406,12 @@
       <workItem from="1558575683291" duration="1141000" />
       <workItem from="1558676135066" duration="88000" />
       <workItem from="1559028798424" duration="633000" />
-      <workItem from="1559051596941" duration="7220000" />
+      <workItem from="1559051596941" duration="7453000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="155139000" />
+    <option name="totallyTimeSpent" value="155372000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -422,7 +423,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="38" y="23" width="1242" height="777" extended-state="6" />
+    <frame x="42" y="23" width="1242" height="777" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21833333" />
@@ -750,16 +751,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/group6coffee/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="177" column="15" lean-forward="true" selection-start-line="177" selection-start-column="15" selection-end-line="177" selection-end-column="15" />
-          <folding>
-            <element signature="e#46#111#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/coffee/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="449">
@@ -793,8 +784,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/coffee/templates/staff.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="23" column="17" lean-forward="true" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
+        <state relative-caret-position="78">
+          <caret line="14" column="7" lean-forward="true" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/group6coffee/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="195" column="26" selection-start-line="195" selection-start-column="26" selection-end-line="195" selection-end-column="26" />
+          <folding>
+            <element signature="e#46#111#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
